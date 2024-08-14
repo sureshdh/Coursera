@@ -1,0 +1,29 @@
+create database StudentCourse;
+
+create table Course( 
+id int PRIMARY KEY IDENTITY(1,1),
+CourseName Varchar NOT NUll,
+CourseProfessor varchar,
+Descrption varchar
+);
+
+create table Student( 
+id int PRIMARY KEY IDENTITY(1,1),
+    Name varchar(255) NOT NULL,
+    email varchar(255) UNIQUE NOT NULL,
+	phone INT
+);
+
+create table Enrollents( 
+studentID INT,
+CourseID INT,
+FOREIGN KEY (studentID) REFERENCES Course(id),
+FOREIGN KEY (CourseID) REFERENCES Student(id),
+PRIMARY KEY (studentID,CourseID),
+
+);
+
+select * from Student;
+
+
+Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;
